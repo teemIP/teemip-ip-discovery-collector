@@ -233,7 +233,6 @@
 		}
 	],
 	"user_delete_policy": "everybody",
-	"url_icon": "",
-	"url_application": "",
-	"notify_contact_id_obsolescence_flag": ""
+	"url_icon": "$url_icon$",
+	"url_application": ""
 }

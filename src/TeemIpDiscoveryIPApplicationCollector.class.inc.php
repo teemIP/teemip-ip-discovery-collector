@@ -51,7 +51,22 @@ class TeemIpDiscoveryIPApplicationCollector extends Collector
 		return true;
 	}
 
-	/**
+    /**
+     * Add URLs for icon and application
+     *
+     * @param array $aPlaceHolders
+     * @throws Exception
+     */
+    public function GetSynchroDataSourceDefinition($aPlaceHolders = []): false|string
+    {
+        $sUrl = Utils::GetConfigurationValue('itop_url');
+
+        $aPlaceHolders['$url_icon$'] = sprintf('%s/env-production/teemip-ip-discovery/asset/img/icons8-binoculars-48.png', $sUrl);
+
+        return parent::GetSynchroDataSourceDefinition($aPlaceHolders);
+    }
+
+    /**
 	 * @inheritdoc
 	 */
 	public function AttributeIsOptional($sAttCode)
