@@ -25,8 +25,6 @@ class TeemIpDiscoveryIPv4Collector extends Collector
 	 */
 	public function Init(): void
 	{
-		parent::Init();
-
 		$this->iIndex = 0;
         $this->bSetStatusOnRegisteredIPs = Utils::GetConfigurationValue('set_status_on_already_registered_ips', 'no');
 		$this->sIPDefaultStatus = Utils::GetConfigurationValue('ip_default_status', 'unassigned');
@@ -41,7 +39,9 @@ class TeemIpDiscoveryIPv4Collector extends Collector
 		$this->oCollectionPlan = TeemIpDiscoveryCollectionPlan::GetPlan();
 		$this->aIPDiscoveryAttributes = $this->oCollectionPlan->GetApplicationParam('params');
 		$this->aIPv4SubnetsList = $this->oCollectionPlan->GetSubnetsList('ipv4');
-	}
+
+        parent::Init();
+    }
 
 	/**
 	 * @inheritdoc

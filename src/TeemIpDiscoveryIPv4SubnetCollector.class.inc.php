@@ -15,11 +15,11 @@ class TeemIpDiscoveryIPv4SubnetCollector extends Collector
 	 */
 	public function Init(): void
 	{
-		parent::Init();
-
 		// Get a copy of the collection plan
 		$this->oCollectionPlan = TeemIpDiscoveryCollectionPlan::GetPlan();
-	}
+
+        parent::Init();
+    }
 
 	/**
 	 * @inheritdoc
