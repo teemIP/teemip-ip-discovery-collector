@@ -70,16 +70,11 @@ class TeemIpDiscoveryIPv4SubnetCollector extends Collector
 	 */
 	public function AttributeIsOptional($sAttCode): bool
 	{
-		switch ($sAttCode) {
-			case 'allow_automatic_ip_creation':
-				return !$this->oCollectionPlan->IsTeemIpIPRequestMgmtInstalled();
-			case 'snmpcredentials_list':
-			case 'snmpdiscovery_id':
-			case 'default_networkdevicetype_id':
-				return true;
-		}
-
-		return parent::AttributeIsOptional($sAttCode);
+		return match ($sAttCode) {
+			'allow_automatic_ip_creation' => !$this->oCollectionPlan->IsTeemIpIPRequestMgmtInstalled(),
+			'default_networkdevicetype_id', 'snmpcredentials_list', 'snmpdiscovery_id' => true,
+			default => parent::AttributeIsOptional($sAttCode),
+		};
 	}
 
 	/**
