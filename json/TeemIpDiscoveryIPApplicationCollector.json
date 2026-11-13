@@ -92,6 +92,17 @@
 			"finalclass": "SynchroAttribute"
 		},
 		{
+			"attcode": "groups_list",
+			"update": "0",
+			"reconcile": "0",
+			"update_policy": "master_locked",
+			"row_separator": "|",
+			"attribute_separator": ";",
+			"value_separator": ":",
+			"attribute_qualifier": "'",
+			"finalclass": "SynchroAttLinkSet"
+		},
+		{
 			"attcode": "iplookup_enabled",
 			"update": "0",
 			"reconcile": "0",
