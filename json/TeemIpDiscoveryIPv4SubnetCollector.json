@@ -71,6 +71,14 @@
       "finalclass": "SynchroAttLinkSet"
     },
     {
+      "attcode": "default_networkdevicetype_id",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "",
+      "finalclass": "SynchroAttExtKey"
+    },
+    {
       "attcode": "dhcp_range_discovery_enabled",
       "update": "0",
       "reconcile": "0",
@@ -277,6 +285,25 @@
       "reconcile": "0",
       "update_policy": "master_locked",
       "finalclass": "SynchroAttribute"
+    },
+    {
+      "attcode": "snmpcredentials_list",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "row_separator": "|",
+      "attribute_separator": ";",
+      "value_separator": ":",
+      "attribute_qualifier": "'",
+      "finalclass": "SynchroAttLinkSet"
+    },
+    {
+      "attcode": "snmpdiscovery_id",
+      "update": "0",
+      "reconcile": "0",
+      "update_policy": "master_locked",
+      "reconciliation_attcode": "",
+      "finalclass": "SynchroAttExtKey"
     },
     {
       "attcode": "status",
