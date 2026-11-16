@@ -71,12 +71,10 @@ class TeemIpDiscoveryIPApplicationCollector extends Collector
 	 */
 	public function AttributeIsOptional($sAttCode)
 	{
-		if ($sAttCode == 'dhcp_range_discovery_enabled') return true;
-		if ($sAttCode == 'providercontracts_list') return true;
-		if ($sAttCode == 'services_list') return true;
-		if ($sAttCode == 'tickets_list') return true;
-
-		return parent::AttributeIsOptional($sAttCode);
+		return match ($sAttCode) {
+			'dhcp_range_discovery_enabled', 'groups_list', 'providercontracts_list', 'services_list', 'tickets_list' => true,
+			default => parent::AttributeIsOptional($sAttCode),
+		};
 	}
 
 	/**
